@@ -1,0 +1,12 @@
+$bg-color: green;
+
+.demo{
+  &__block{
+    background-color: $bg-color;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

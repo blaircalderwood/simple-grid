@@ -1,0 +1,19 @@
+@mixin breakpoint($screenSize) {
+  @if $screenSize == mobile {
+    @media (max-width: $breakpoint-mobile-max) { @content ; }
+  }
+  @else if $screenSize == tablet {
+    @media (min-width: $breakpoint-tablet-min) { @content ; }
+  }
+  @else if $screenSize == desktop {
+    @media (min-width: $breakpoint-desktop-min)  { @content ; }
+  }
+}
+
+@mixin column($width, $gutter: $gutter-desktop){
+  $one-twelfth: (100% / 12);
+  $col-width: $one-twelfth * $width;
+  flex-basis: calc(#{$col-width} - (#{$gutter} * 2));
+  margin: 0 $gutter;
+  box-sizing: border-box;
+}
